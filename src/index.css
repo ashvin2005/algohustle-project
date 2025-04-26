@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply mt-1 block w-full rounded-lg border-gray-300 shadow-sm 
+    focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 
+    transition duration-200 ease-in-out;
+  }
+
+  .btn-primary {
+    @apply w-full flex justify-center py-3 px-4 border border-transparent 
+    rounded-lg shadow-sm text-sm font-semibold text-white bg-indigo-600 
+    hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
+    focus:ring-indigo-500 transform hover:scale-[1.02] transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white overflow-hidden shadow-lg rounded-xl border border-gray-100
+    hover:shadow-xl transition-all duration-300 ease-in-out;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold;
+  }
+
+  .stat-label {
+    @apply text-sm font-medium text-gray-500 mt-1;
+  }
+}
+
+/* Chart customizations */
+.chart-container {
+  @apply relative w-full h-full min-h-[200px];
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
